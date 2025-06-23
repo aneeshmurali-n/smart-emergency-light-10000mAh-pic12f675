@@ -127,8 +127,9 @@ This forms the path:
 ### ⚠️ Power Outage Handling
 
 - If **AC power is lost**, the 12V line drops.
-- **K2 de-energizes** and switches to NC.
-- This **connects the battery to the output**, powering the LED panels and USB regulator.
+- The **K2 relay de-energizes** and switches to its **Normally Closed (NC)** contact.
+- This automatically **connects the battery to the output**, supplying power to the LED panels and USB regulator.
+- The outputs (LED panels, USB devices) are controlled via **independent switches**, allowing manual on/off control during backup mode.
 
 ---
 
