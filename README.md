@@ -68,13 +68,16 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 | **Relay Driver**                      | 2N5551 (Q1) – NPN transistor used to drive the relay using the microcontroller’s output signal. |
 | **Input Isolation Diode**             | M7 or 1N4007 (D3) – Isolates the LM317’s input capacitor (100µF, C6) from the main bulk capacitor (1000µF, C8), and prevents reverse current flow. |
 | **LED Current Limit Resistors**       | 1kΩ resistors used for current limiting: R13, R14, R15 for power supply indicator LEDs. R3, R4 270Ω used for charging and battery-low indicators. Also protect MCU GPIO pins.|
+<br>
+<br>
+
 
 
 ## ⚙️🔋 Functional Overview
 
 The **Smart Emergency Light** is a microcontroller-based system designed for automatic lighting and intelligent battery charging. It operates on a dual 6V 5Ah SLA battery pack (connected in parallel for 10Ah capacity), providing long-lasting backup power.
 
-### 🔌 Power Input & Regulation
+#### 🔌 Power Input & Regulation
 A 9-0-9V AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable DC voltage.<br>
 **Rectified Voltage Calculation:**
 ```
@@ -82,7 +85,7 @@ VDC = VAC × √2 − diode drop
     = 9 × 1.414 − 0.7
     = 12.02V DC (approx)
 ```
-## 🔋🔁 Power Switching and Relay Operation Overview
+#### 🔁 Power Switching and Relay Operation
 
 The system uses a **rectified and filtered 12V DC** derived from a 9-0-9V AC input (via 1N5408 diodes and large electrolytic capacitors). This 12V DC powers:
 
@@ -92,7 +95,7 @@ The system uses a **rectified and filtered 12V DC** derived from a 9-0-9V AC inp
 
 ---
 
-### 🔌 Normal (Power ON) Operation
+#### 🔌 Normal (Power ON) Operation
 
 1. The **battery’s positive terminal** connects to the **COM (Common)** of the **charging relay (K1)**.
 2. The **NC (Normally Closed)** of K1 is connected to the **NC of K2 (auto ON/OFF relay)**.
@@ -109,7 +112,7 @@ This forms the path:
 
 ---
 
-### 🔄 Charging Control via MCU
+#### 🔄 Charging Control via MCU
 
 - The **MCU monitors battery voltage**.
 - When the battery is low or the **charge button is pressed**, the MCU:
@@ -124,7 +127,7 @@ This forms the path:
 
 ---
 
-### ⚠️ Power Outage Handling
+#### ⚠️ Power Outage Handling
 
 - If **AC power is lost**, the 12V line drops.
 - The **K2 relay de-energizes** and switches to its **Normally Closed (NC)** contact.
@@ -133,7 +136,7 @@ This forms the path:
 
 ---
 
-### ⚡ Fast Switchover Design
+#### ⚡ Fast Switchover Design
 
 To enable **quick transition during outages**:
 
