@@ -75,7 +75,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 The **Smart Emergency Light** is a microcontroller-based system designed for automatic lighting and intelligent battery charging. It operates on a dual 6V 5Ah SLA battery pack (connected in parallel for 10Ah capacity), providing long-lasting backup power.
 
 ### 🔌 Power Input & Regulation
-&nbsp;&nbsp;&nbsp;&nbsp; A 9-0-9V AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable DC voltage.<br>
+A 9-0-9V AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable DC voltage.<br>
 **Rectified Voltage Calculation:**
 ```
 VDC = VAC × √2 − diode drop
