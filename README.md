@@ -69,6 +69,10 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 | **Input Isolation Diode**             | M7 or 1N4007 (D3) – Isolates the LM317’s input capacitor (100µF, C6) from the main bulk capacitor (1000µF, C8), and prevents reverse current flow. |
 | **LED Current Limit Resistors**       | 1kΩ resistors used for current limiting: R13, R14, R15 for power supply indicator LEDs. R3, R4 270Ω used for charging and battery-low indicators. Also protect MCU GPIO pins.|
 
+## 🧠 Functional Overview
+
+
+
 
 
 
