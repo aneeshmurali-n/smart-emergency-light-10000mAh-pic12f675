@@ -82,6 +82,64 @@ VDC = VAC × √2 − diode drop
     = 9 × 1.414 − 0.7
     = 12.02V DC (approx)
 ```
+## 🔋🔁 Power Switching and Relay Operation Overview
+
+The system uses a **rectified and filtered 12V DC** derived from a 9-0-9V AC input (via 1N5408 diodes and large electrolytic capacitors). This 12V DC powers:
+
+- The **LM317 voltage regulator** for the MCU and ADC reference.
+- The **charging relay (K1)**.
+- The **auto ON/OFF relay (K2)**, which controls LED panel and USB power.
+
+---
+
+### 🔌 Normal (Power ON) Operation
+
+1. The **battery’s positive terminal** connects to the **COM (Common)** of the **charging relay (K1)**.
+2. The **NC (Normally Closed)** of K1 is connected to the **NC of K2 (auto ON/OFF relay)**.
+3. The **COM of K2** is the final **output** to the **LED panels** and **USB regulator input**.
+
+This forms the path:  
+➡️ **Battery → K1 (COM → NC) → K2 (NC → COM) → Output (LEDs/USB)**
+
+4. The **NO (Normally Open)** contact of K1 connects to the **charging voltage**.
+5. **K2** is directly powered by the 12V DC line.  
+   - When the system is plugged into AC (12V present), **K2 is energized**:
+     - COM → NO path is active.
+     - The **battery is disconnected** from the load.
+
+---
+
+### 🔄 Charging Control via MCU
+
+- The **MCU monitors battery voltage**.
+- When the battery is low or the **charge button is pressed**, the MCU:
+  - Sends **5V to the base of Q1 (2N5551)**.
+  - Q1 turns **ON**, energizing **K1**.
+  - **K1 switches to NO**, connecting **battery → charger**.
+  - This **disconnects battery from load** during charging.
+
+- When charging is complete or not needed:
+  - MCU sets Q1 base **LOW (0V)**.
+  - **K1 de-energizes**, reconnecting the battery to the load via NC.
+
+---
+
+### ⚠️ Power Outage Handling
+
+- If **AC power is lost**, the 12V line drops.
+- **K2 de-energizes** and switches to NC.
+- This **connects the battery to the output**, powering the LED panels and USB regulator.
+
+---
+
+### ⚡ Fast Switchover Design
+
+To enable **quick transition during outages**:
+
+- The bulk capacitor **C8 (1000µF)** must discharge rapidly.
+- Two **2.2kΩ 1W resistors (R8, R9)** are placed in **parallel across C8**.
+- This allows **K2 to release quickly**, ensuring the battery connects to the load without delay.
+
 
 
 
