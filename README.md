@@ -57,10 +57,13 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 | **Electrolytic Caps**| 100µF/25V, 1000µF/25V – Used as bulk filtering capacitors                    |
 | **Ceramic Caps**     | 0.1µF/100V X7R – For decoupling and ADC input filtering                      |
 | **Button**           | KEY1 – SPST momentary panel push button or 6×6×8mm tactile push button       |
-| **Potentiometer**    | RP1 (200Ω multi-turn) – For fine-tuning MCU supply and ADC reference voltage |
-| **Voltage Sensor**    | 33kΩ (R1, R2) – Forms a voltage divider to scale down input voltage by half, allowing safe battery voltage measurement and protecting the MCU GPIO |
+| **Potentiometer**     | RP1 (200Ω multi-turn) – Used to fine-tune the MCU supply and ADC reference voltage. Adjust to precisely 5.00V before inserting the MCU. This ensures correct operation and improves ADC accuracy. |
+| **Voltage Sensor**    | 33kΩ (R1, R2) – Forms a voltage divider to scale down input voltage by half, enabling safe battery voltage measurement and protecting the MCU GPIO. Match resistor values using a multimeter for better accuracy. |
 | **Base Current Limit Resistor** | 1kΩ (R12) – Sets the base current for the relay driver transistor and protects the MCU GPIO pin |
 | **Relay Driver** | 2N5551 (Q1) – NPN transistor used to drive the relay using the microcontroller’s output signal |
+| **Input Isolation Diode** | M7 or 1N4007 (D3) – Used to isolate the LM317’s input capacitor (100µF, C6) from the main bulk capacitor (1000µF, C8), and to prevent reverse current flow for improved stability and protection |
+
+
 
 
  
