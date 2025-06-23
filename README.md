@@ -41,27 +41,31 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
   To set and maintain the ADC reference voltage precisely at **5.00V** for improved measurement accuracy
 
 ---
-## 💻⚙️ Major Hardware Components
 
-| Component             | Description                                                                 |
-|----------------------|-----------------------------------------------------------------------------|
-| **MCU**              | PIC12F675 – Handles control logic, monitoring, and switching                |
-| **MCU Regulator**    | LM317 adjustable regulator for MCU supply and ADC reference (4.76V–5.70V)   |
-| **USB Regulator**    | LD1117AG (5V LDO) – Provides regulated 5V output for light USB loads (e.g., USB lamps) |
-| **Relays**           | JSM1-12V-5 (×2) – For automatic LED panel switching, charging control, and cutoff |
-| **Diodes**              | 1N5408 – For rectification (D1, D2, D4, D5), M7 or 1N4007 – For back-EMF protection (D6, D7) |
-| **LEDs**             | 3mm Green/Red (×5) – Status indicators for charging, power presence, and low battery |
-| **Power Resistors**   | 1Ω 5W, 2.2Ω 1W (R11,R10) – Used to limit charging current to approximately 1 amp     |
-| **Voltage Drop Diode** | D8 – Drops 0.6–0.7V to help limit charging current (in combination with R10, R11) and also prevents reverse current flow |
-| **1W Resistors**     | 2.2KΩ 1W (R8, R9) – Discharge bulk capacitors quickly to enable fast relay release and faster LED panel switching |
-| **Electrolytic Caps**| 100µF/25V, 1000µF/25V – Used as bulk filtering capacitors                    |
-| **Ceramic Caps**     | 0.1µF/100V X7R – For decoupling and ADC input filtering                      |
-| **Button**           | KEY1 – SPST momentary panel push button or 6×6×8mm tactile push button       |
-| **Potentiometer**     | RP1 (200Ω multi-turn) – Used to fine-tune the MCU supply and ADC reference voltage. Adjust to precisely 5.00V before inserting the MCU. This ensures correct operation and improves ADC accuracy. |
-| **Voltage Sensor**    | 33kΩ (R1, R2) – Forms a voltage divider to scale down input voltage by half, enabling safe battery voltage measurement and protecting the MCU GPIO. Match resistor values using a multimeter for better accuracy. |
-| **Base Current Limit Resistor** | 1kΩ (R12) – Sets the base current for the relay driver transistor and protects the MCU GPIO pin |
-| **Relay Driver** | 2N5551 (Q1) – NPN transistor used to drive the relay using the microcontroller’s output signal |
-| **Input Isolation Diode** | M7 or 1N4007 (D3) – Used to isolate the LM317’s input capacitor (100µF, C6) from the main bulk capacitor (1000µF, C8), and to prevent reverse current flow for improved stability and protection |
+## 💻⚙️ Major Hardware Components
+| Component                             | Description |
+| ------------------------------------- | --------------------------------------------------------------------------------------------|
+| **MCU**                               | PIC12F675 – Handles control logic, monitoring, and switching.|
+| **MCU Regulator**                     | LM317 adjustable regulator for MCU supply and ADC reference (4.76V–5.70V).|
+| **USB Regulator**                     | LD1117AG (5V LDO) – Provides regulated 5V output for light USB loads (e.g., USB lamps).|
+| **Relays**                            | JSM1-12V-5 (×2) – For automatic LED panel switching, charging control, and cutoff.|
+| **Diodes**                            | 1N5408 – For rectification (D1, D2, D4, D5); M7 or 1N4007 – For back-EMF protection (D6, D7).|
+| **LEDs**                              | 3mm Green/Red (×5) – Status indicators for charging, power presence, and low battery.|
+| **Power Resistors**                   | 1Ω 5W, 2.2Ω 1W (R11, R10) – Used to limit charging current to approximately 1 amp. |
+| **Voltage Drop Diode**                | D8 – Drops 0.6–0.7V to help limit charging current (in combination with R10, R11) and also prevents reverse current flow. |
+| **1W Resistors**                      | 2.2kΩ 1W (R8, R9) – Discharge bulk capacitors quickly to enable fast relay release and faster LED panel switching. |
+| **Electrolytic Capacitors**           | 100µF/25V, 1000µF/25V – Used as bulk filtering capacitors.|
+| **Ceramic Capacitors**                | 0.1µF/100V X7R – For decoupling and ADC input filtering.|
+| **Start Charging Button**             | KEY1 – SPST momentary panel push button (e.g., 6×6×8mm tactile type) used to manually initiate charging by pulling the MCU GPIO pin low. |
+| **Charging Button Pull-up Resistor**  | 4.7kΩ (R5) – Keeps the GPIO pin high by default. When the button is pressed, it pulls the pin low to trigger charging. Also limits current into the GPIO.|
+| **Potentiometer**                     | RP1 (200Ω multi-turn) – Used to fine-tune the MCU supply and ADC reference voltage. Adjust to precisely 5.00V before inserting the MCU for accurate operation.|
+| **LM317 Output Voltage Set Resistor** | Fixed: R6 (270Ω), R7 (750Ω); Adjustable: RP1 (0–200Ω) – Used to set LM317 output voltage (\~4.73V–5.65V). Adjust RP1 to \~60Ω for 5.00V (MCU + ADC reference).|
+| **Voltage Sensor**                    | 33kΩ (R1, R2) – Forms a voltage divider to scale down input voltage by half, enabling safe battery voltage measurement and protecting the MCU GPIO. Match resistor values using a multimeter for better accuracy. |
+| **Base Current Limit Resistor**       | 1kΩ (R12) – Sets the base current for the relay driver transistor and protects the MCU GPIO pin. |
+| **Relay Driver**                      | 2N5551 (Q1) – NPN transistor used to drive the relay using the microcontroller’s output signal. |
+| **Input Isolation Diode**             | M7 or 1N4007 (D3) – Isolates the LM317’s input capacitor (100µF, C6) from the main bulk capacitor (1000µF, C8), and prevents reverse current flow. |
+| **LED Current Limit Resistors**       | 1kΩ resistors used for current limiting: R13, R14, R15 for power supply indicator LEDs; R3, R4 for charging and battery-low indicators. Also protect MCU GPIO pins.|
+
 
 
 
