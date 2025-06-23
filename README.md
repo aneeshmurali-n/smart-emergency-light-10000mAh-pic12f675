@@ -27,7 +27,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
   Triggered via a microswitch (KEY1 – force charge button)
 
 - 🔴 **LED Indicators:**
-  - Green LED blinks while charging; stays solid when fully charged
+  - Green LED blinks while charging, stays solid when fully charged
   - Red LED glows when battery is critically low (only when plugged in)
   - Separate indicators for 12V and 5V power presence
 
@@ -40,16 +40,19 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 - 🔧 **Adjustable MCU supply voltage (4.76V – 5.70V)**  
   To set and maintain the ADC reference voltage precisely at **5.00V** for improved measurement accuracy
 
+
+
+
 ---
 
-## 💻⚙️ Major Hardware Components
+## 💻⚙️ Key Hardware Components and Their Functions
 | Component                             | Description |
 | ------------------------------------- | --------------------------------------------------------------------------------------------|
 | **MCU**                               | PIC12F675 – Handles control logic, monitoring, and switching.|
 | **MCU Regulator**                     | LM317 adjustable regulator for MCU supply and ADC reference (4.76V–5.70V).|
 | **USB Regulator**                     | LD1117AG (5V LDO) – Provides regulated 5V output for light USB loads (e.g., USB lamps).|
 | **Relays**                            | JSM1-12V-5 (×2) – For automatic LED panel switching, charging control, and cutoff.|
-| **Diodes**                            | 1N5408 – For rectification (D1, D2, D4, D5); M7 or 1N4007 – For back-EMF protection (D6, D7).|
+| **Diodes**                            | 1N5408 – For rectification (D1, D2, D4, D5), M7 or 1N4007 – For back-EMF protection (D6, D7).|
 | **LEDs**                              | 3mm Green/Red (×5) – Status indicators for charging, power presence, and low battery.|
 | **Power Resistors**                   | 1Ω 5W, 2.2Ω 1W (R11, R10) – Used to limit charging current to approximately 1 amp. |
 | **Voltage Drop Diode**                | D8 – Drops 0.6–0.7V to help limit charging current (in combination with R10, R11) and also prevents reverse current flow. |
