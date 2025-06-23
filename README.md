@@ -49,14 +49,21 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 | **MCU Regulator**    | LM317 adjustable regulator for MCU supply and ADC reference (4.76V–5.70V)   |
 | **USB Regulator**    | LD1117AG (5V LDO) – Provides regulated 5V output for light USB loads (e.g., USB lamps) |
 | **Relays**           | JSM1-12V-5 (×2) – For automatic LED panel switching, charging control, and cutoff |
-| **Diodes**           | M7 or 1N4007, 1N5408 – For rectification and back-EMF protection             |
+| **Diodes**              | 1N5408 – For rectification (D1, D2, D4, D5); M7 or 1N4007 – For back-EMF protection (D6, D7) |
 | **LEDs**             | 3mm Green/Red (×5) – Status indicators for charging, power presence, and low battery |
-| **Power Resistors**  | 1Ω 5W, 2.2Ω 1W – For charging current limiting                               |
+| **Power Resistors**   | 1Ω 5W, 2.2Ω 1W (R11,R10) – Used to limit charging current to approximately 1 amp     |
+| **Voltage Drop Diode** | D8 – Drops 0.6–0.7V to help limit charging current (in combination with R10, R11) and also prevents reverse current flow |
 | **1W Resistors**     | 2.2KΩ 1W (R8, R9) – Discharge bulk capacitors quickly to enable fast relay release and faster LED panel switching |
 | **Electrolytic Caps**| 100µF/25V, 1000µF/25V – Used as bulk filtering capacitors                    |
 | **Ceramic Caps**     | 0.1µF/100V X7R – For decoupling and ADC input filtering                      |
 | **Button**           | KEY1 – SPST momentary panel push button or 6×6×8mm tactile push button       |
 | **Potentiometer**    | RP1 (200Ω multi-turn) – For fine-tuning MCU supply and ADC reference voltage |
+| **Voltage Sensor**    | 33kΩ (R1, R2) – Forms a voltage divider to scale down input voltage by half, allowing safe battery voltage measurement and protecting the MCU GPIO |
+| **Base Current Limit Resistor** | 1kΩ (R12) – Sets the base current for the relay driver transistor and protects the MCU GPIO pin |
+| **Relay Driver** | 2N5551 (Q1) – NPN transistor used to drive the relay using the microcontroller’s output signal |
+
+
+ 
 
 
 
