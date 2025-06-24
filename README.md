@@ -1,4 +1,4 @@
-# Smart Emergency Light System 
+# 💡Smart Emergency Light System 
 > 🚧 This repository is under active development.
 #### (with Battery Management, USB Output, and MCU Control)
 This is an advanced emergency lighting solution powered by a 10,000mAh 6V battery (2 × 6V 5Ah in parallel) and managed by a PIC12F675 microcontroller. 
@@ -9,7 +9,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 <br>
 <br>
 <br>
-# 💡 Features
+# ✨Features
 
 - 🔋 **10,000mAh 6V rechargeable battery**  
   (2 × 6V 5Ah batteries connected in parallel)
