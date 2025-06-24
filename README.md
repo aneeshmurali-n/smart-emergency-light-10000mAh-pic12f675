@@ -168,7 +168,7 @@ Vout ≈ 4.76V to 5.70V
 ---
 <br>
 
-# ⚡🔋🎛️ Charging Power Supply, Current Limit, and Control
+# ⚡🔋Charging Power Supply, Current Limit & Control
 ![image](https://github.com/user-attachments/assets/23fa0a38-a06d-4c4c-9a1b-1a395165e2b6)
 
 A 7.5V-0-7.5V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable DC voltage for battery charging.<br>
