@@ -1,4 +1,4 @@
-# Smart Emergency Light System
+a# Smart Emergency Light System
 #### (with Battery Management, USB Output, and MCU Control)
 This is an advanced emergency lighting solution powered by a 10,000mAh 6V battery (2 × 6V 5Ah in parallel) and managed by a PIC12F675 microcontroller. 
 It integrates intelligent LED panel control, smart automatic charging, USB power output, status indication, manual override, and safety features like current limiting and relay-based automatic cutoff.
@@ -67,7 +67,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 | **Base Current Limit Resistor**       | 1kΩ (R12) – Sets the base current for the relay driver transistor and protects the MCU GPIO pin. |
 | **Relay Driver**                      | 2N5551 (Q1) – NPN transistor used to drive the relay using the microcontroller’s output signal. |
 | **Input Isolation Diode**             | M7 or 1N4007 (D3) – Isolates the LM317’s input capacitor (100µF, C6) from the main bulk capacitor (1000µF, C8), and prevents reverse current flow. |
-| **LED Current Limit Resistors**       | 1kΩ resistors used for current limiting: R13, R14, R15 for power supply indicator LEDs. R3, R4 270Ω used for charging and battery-low indicators. Also protect MCU GPIO pins.|
+| **LED Current Limit Resistors**       | 1kΩ resistors used for current limiting: R13, R14, R15, R16 for power supply indicator LEDs. R3, R4 270Ω used for charging and battery-low indicators. Also protect MCU GPIO pins.|
 <br>
 <br>
 
