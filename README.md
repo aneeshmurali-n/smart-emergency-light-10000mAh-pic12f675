@@ -77,7 +77,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 # ⚙️🔋 Functional Overview
 <br>
 
-## 🔌 Main Power supply
+# 🔌MCU & Relay Power Supply Calculation:
 A 9V-0-9V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable 12V DC supply for relays and the MCU voltage regulator.
 
 **Rectified Voltage Calculation:**
@@ -85,6 +85,37 @@ A 9V-0-9V center-tapped AC input is rectified using high-current diodes (1N5408)
 VDC = VAC × √2 − diode drop
     = 9 × 1.414 − 0.7
     = 12.02V DC (approx)   
+
+<br>
+
+## LM317 MCU Regulator Output Voltage Calculation:
+
+Given:
+- **R1 = 270Ω**
+- **R2 = 750Ω + 200Ω variable resistor**  
+  → So R2 ranges from **750Ω to 950Ω**
+
+### Formula: 
+**Vout = 1.25 × (1 + R2 / R1)**
+<br>
+<br>
+
+ **Case 1: R2 = 750Ω**<br>
+ Vout = 1.25 × (1 + 750 / 270)<br>
+      = 1.25 × (1 + 2.78)<br>
+      = 1.25 × 3.78<br>
+      = 4.73V<br>
+
+
+**Case 2: R2 = 950Ω**<br>
+Vout = 1.25 × (1 + 950 / 270)<br>
+     = 1.25 × (1 + 3.52)<br>
+     = 1.25 × 4.52<br>
+     = 5.65V<br>
+
+**Result**<br>
+With **R1 = 270Ω** and **R2 = 750Ω to 950Ω**, the output voltage will range from:<br>
+Vout ≈ 4.73V to 5.65V<br>
 
 <br>
 
