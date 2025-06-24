@@ -5,7 +5,9 @@ It integrates intelligent LED panel control, smart automatic charging, USB power
 
 Unlike basic emergency lights, this system operates as a smart power hub, designed for efficient battery usage, real-time 
 power status monitoring, and enhanced user interaction. It is optimized to extend battery life and deliver reliable backup power intelligently.
-
+<br>
+<br>
+<br>
 # 💡 Features
 
 - 🔋 **10,000mAh 6V rechargeable battery**  
@@ -39,13 +41,13 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 
 - 🔧 **Adjustable MCU supply voltage (4.76V – 5.70V)**  
   To set and maintain the ADC reference voltage precisely at **5.00V** for improved measurement accuracy
-
-
-
-
+  <br>
 ---
+<br>
 
 # 💻⚙️ Key Hardware Components and Their Functions
+<br>
+
 | Component                             | Description |
 | ------------------------------------- | --------------------------------------------------------------------------------------------|
 | **MCU**                               | PIC12F675 – Handles control logic, monitoring, and switching.|
@@ -73,27 +75,27 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 <br>
 
 # ⚙️🔋 Functional Overview
-### 🔌 Main Power supply
-A 9V-0-9V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable 12V DC supply for relays and the MCU voltage regulator.<br>
-**Rectified Voltage Calculation:**
-```
-VDC = VAC × √2 − diode drop
-    = 9 × 1.414 − 0.7
-    = 12.02V DC (approx)
-```
 <br>
 
-### 🔌  Charging Power supply 
-A 7.5V-0-7.5V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable DC voltage for battery charging.<br>
+## 🔌 Main Power supply
+A 9V-0-9V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable 12V DC supply for relays and the MCU voltage regulator.
+
 **Rectified Voltage Calculation:**
-```
+
+VDC = VAC × √2 − diode drop
+    = 9 × 1.414 − 0.7
+    = 12.02V DC (approx)   
+
+<br>
+
+## 🔌  Charging Power supply 
+A 7.5V-0-7.5V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable DC voltage for battery charging.<br>
+
+**Rectified Voltage Calculation:**
+
 VDC = VAC × √2 − diode drop
     = 7.5 × 1.414 − 0.7
     = 9.91V DC (approx)
-```
-<br>
-
----
 
 <br>
 
@@ -131,25 +133,74 @@ To find the required resistance to limit the **charging current to 1A**, we appl
 ---
 
 ### ⚡ Voltage across the resistor(s):
-V_R = V_supply - V_battery - V_diode  
-V_R = 9.91V - 6V - 0.7V  
-V_R = 3.21V
-
+VR = V_supply - V_battery - V_diode  
+VR = 9.91V - 6V - 0.7V  
+VR = 3.21V
 
 ---
 
-### 🔧 Required resistance:
+### ⚡️Ω Required resistance:
 R = V / I  
 R = 3.21V / 1A  
 R = 3.21Ω
 
-
 ---
+
 
 ✅ To limit charging current to **1A**, use a total resistance of **3.21Ω**  
 So We can use R10 = 1Ω and R11 = 2.2Ω → **Total = 3.2Ω**, which gives approx **1.003A**
 
 ---
+
+### 🔥 Resistor Power Dissipation Calculation: 
+
+To calculate power (wattage) dissipated in the current-limiting resistors, use:
+
+**P = I² × R**
+
+
+#### ✅ Given:
+- Charging current **I** = 1A  
+- R10 = 1Ω  
+- R11 = 2.2Ω
+
+**Power in R10:**
+P = 1² × 1 = 1W
+
+**Power in R11:**
+P = 1² × 2.2 = 2.2W
+
+#### ✅ Total Power Dissipation:
+
+P total = 1W + 2.2W = **3.2W**
+
+
+#### 🛡️ Recommended Resistor Ratings:
+| Resistor | Actual Power | Recommended Rating |
+|----------|--------------|--------------------|
+| R10      | 1W           | 2W or 5W           |
+| R11      | 2.2W         | 5W                 |
+
+### ✅ Conclusion
+
+We are using **5W resistors** for both **R10 (1Ω)** and **R11 (2.2Ω)**.
+
+Since the calculated power dissipation is:
+
+- **R10:** 1W  
+- **R11:** 2.2W  
+- **Total:** 3.2W
+
+Using **5W-rated resistors** provides plenty of thermal margin, making the design:
+
+- ✅ **Safe**
+- ✅ **Sufficient**
+- ✅ **Reliable** for long-term operation
+---
+
+
+
+
 
 
 
