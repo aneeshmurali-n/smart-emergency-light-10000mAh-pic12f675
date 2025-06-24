@@ -99,7 +99,7 @@ VDC = VAC × √2 − diode drop
 
 <br>
 
-## 🔋🔌 Required Battery Charging Current Limit
+## 🔋🔌 Battery Charging Current Limit: Requirements and Calculations
 
 ### 🔋 Battery Setup:
 - Two **6V 5Ah** batteries connected in **parallel**
