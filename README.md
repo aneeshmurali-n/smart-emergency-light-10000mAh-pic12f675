@@ -109,13 +109,13 @@ VDC = VAC × √2 − diode drop
 
 ---
 
-### 🛠️ Charging Current Limiting Components:
+### 🪫⚙️ Charging Current Limiting Components:
 - **R10** and **R11**  
 - **D8** = Diode with **0.7V forward voltage drop**
 
 ---
 
-### 🧮 Calculating Required Resistance for 1A Charging Current
+### 📅 Calculating Required Resistance for 1A Charging Current
 
 To find the required resistance to limit the **charging current to 1A**, we apply **Ohm’s Law**:
 
