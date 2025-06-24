@@ -78,81 +78,135 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 <br>
 
 # 🔌MCU & Relay Power Supply Calculation:
+![image](https://github.com/user-attachments/assets/960b5701-4a17-4e42-867d-4ba9e1641357)
+
 A 9V-0-9V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable 12V DC supply for relays and the MCU voltage regulator.
 
-**Rectified Voltage Calculation:**
-
+### Rectified Voltage Calculation:
+```
 VDC = VAC × √2 − diode drop
     = 9 × 1.414 − 0.7
     = 12.02V DC (approx)   
-
+```
 <br>
 
-## LM317 MCU Regulator Output Voltage Calculation:
+## 🔋🎛️LM317 MCU Regulator Output Voltage Calculation:
 
-Given:
-- **R1 = 270Ω**
-- **R2 = 750Ω + 200Ω variable resistor**  
-  → So R2 ranges from **750Ω to 950Ω**
+### 🔣 Formula:
+```
+Vout = 1.25 × (1 + R2 / R1) + Iadj × R2
+```
+- `Iadj` is typically ~50 μA (0.00005 A)
 
-### Formula: 
-**Vout = 1.25 × (1 + R2 / R1)**
+
+### 📌 Given:
+- **R1 = R6 = 270Ω**
+- **R2 = R7 + RP1 = 750Ω + 0–200Ω variable resistor**
+- So, **R2 range: 750Ω to 950Ω**
+- **Iadj ≈ 50μA**
+
+
+### 📐 Calculations:
+
+#### Case 1: **R2 = 750Ω**
+```
+Vout = 1.25 × (1 + 750 / 270) + 0.00005 × 750
+     = 1.25 × (1 + 2.777) + 0.0375
+     = 1.25 × 3.777 + 0.0375
+     = 4.721 + 0.0375
+     ≈ 4.76V
+```
+
+#### Case 2: **R2 = 950Ω**
+```
+Vout = 1.25 × (1 + 950 / 270) + 0.00005 × 950
+     = 1.25 × (1 + 3.5185) + 0.0475
+     = 1.25 × 4.5185 + 0.0475
+     = 5.648 + 0.0475
+     ≈ 5.70V
+```
+
+### 🧮 Solving for R2 for 5.00 V Output:
+
+```
+5.00 = 1.25 × (1 + R2 / 270) + 0.00005 × R2
+```
+
+Simplify:
+```
+5.00 = 1.25 + (1.25 / 270) × R2 + 0.00005 × R2
+5.00 - 1.25 = R2 × (0.00463 + 0.00005)
+3.75 = R2 × 0.00468
+R2 = 3.75 / 0.00468 ≈ 801 Ω
+```
+
+### 🎛️ Potentiometer Adjustment:
+
+- Fixed part: `R7 = 750 Ω`
+- Potentiometer (RP1) required setting:
+```
+RP1 = R2 - R7 = 801 Ω - 750 Ω = 51 Ω
+```
+
+### ✅ Result:
+With **R1 = 270Ω** and **R2 = 750Ω to 950Ω**, the LM317 output voltage will range approximately from:
+
+```
+Vout ≈ 4.76V to 5.70V
+```
+### ✅ Set the potentiometer to approximately **51 Ω** to get a stable **5.00 V** output from the LM317.
+
+
+### ✅ Final Component Values:
+
+| Component | Value           |
+|----------:|------------------|
+| **R6**    | 270 Ω (fixed)     |
+| **R7**    | 750 Ω (fixed)    |
+| **RP1**   | **51 Ω** (from 200 Ω range) |
+
+---
 <br>
-<br>
 
- **Case 1: R2 = 750Ω**<br>
- Vout = 1.25 × (1 + 750 / 270)<br>
-      = 1.25 × (1 + 2.78)<br>
-      = 1.25 × 3.78<br>
-      = 4.73V<br>
+# ⚡🔋🎛️ Charging Power Supply, Current Limit, and Control
+![image](https://github.com/user-attachments/assets/23fa0a38-a06d-4c4c-9a1b-1a395165e2b6)
 
-
-**Case 2: R2 = 950Ω**<br>
-Vout = 1.25 × (1 + 950 / 270)<br>
-     = 1.25 × (1 + 3.52)<br>
-     = 1.25 × 4.52<br>
-     = 5.65V<br>
-
-**Result**<br>
-With **R1 = 270Ω** and **R2 = 750Ω to 950Ω**, the output voltage will range from:<br>
-Vout ≈ 4.73V to 5.65V<br>
-
-<br>
-
-## 🔌  Charging Power supply 
 A 7.5V-0-7.5V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable DC voltage for battery charging.<br>
 
-**Rectified Voltage Calculation:**
-
+### Rectified Voltage Calculation:
+```
 VDC = VAC × √2 − diode drop
     = 7.5 × 1.414 − 0.7
     = 9.91V DC (approx)
-
+```
 <br>
 
 ## 🔋🔌 Battery Charging Current Limit: Requirements and Calculations
 
 ### 🔋 Battery Setup:
-- Two **6V 5Ah** batteries connected in **parallel**
-- **Total capacity:** 10Ah
-- **Recommended charge rate:**  
-  C/10 = 10000mAh / 10 = **1000mA = 1A**
+```
+• Two 6V 5Ah batteries connected in parallel
+• Total capacity:
+  10Ah
+• Recommended charge rate:
+  C/10 = 10000mAh / 10 = 1000mA = 1A
+```
 
----
 
 ### 🪫⚙️ Components That Limit Charging Current:
-- **R10** and **R11**  
-- **D8** = Diode with **0.7V forward voltage drop**
 
----
+```
+R10 and R11  
+D8 = Diode with  0.7V forward voltage drop
+```
+
 
 ### 📅 Calculating Required Resistance for 1A Limit
+```
+To find the required resistance to limit the charging current to 1A, we apply Ohm’s Law:
+R = V / I
+```
 
-To find the required resistance to limit the **charging current to 1A**, we apply **Ohm’s Law**:
-
-**R = V / I**
-
----
 
 ### ✅ Given:
 
@@ -161,50 +215,53 @@ To find the required resistance to limit the **charging current to 1A**, we appl
 - **Diode D8 voltage drop:** 0.7V  
 - **Target charging current:** 1A
 
----
 
-### ⚡ Voltage across the resistor(s):
-VR = V_supply - V_battery - V_diode  
+
+### ⚡ Voltage across the resistors (R10,R11):
+```
+VR = V supply - V battery - V diode  
 VR = 9.91V - 6V - 0.7V  
 VR = 3.21V
+```
 
----
 
 ### ⚡️Ω Required resistance:
+```
 R = V / I  
 R = 3.21V / 1A  
 R = 3.21Ω
+```
 
----
 
 
 ✅ To limit charging current to **1A**, use a total resistance of **3.21Ω**  
 So We can use R10 = 1Ω and R11 = 2.2Ω → **Total = 3.2Ω**, which gives approx **1.003A**
 
----
+<br>
+<br>
 
 ### 🔥 Resistor Power Dissipation Calculation: 
-
+```
 To calculate power (wattage) dissipated in the current-limiting resistors, use:
 
-**P = I² × R**
+P = I² × R
 
 
-#### ✅ Given:
-- Charging current **I** = 1A  
-- R10 = 1Ω  
-- R11 = 2.2Ω
+✅ Given:
+• Charging current I = 1A  
+• R10 = 1Ω  
+• R11 = 2.2Ω
 
-**Power in R10:**
+Power in R10:
 P = 1² × 1 = 1W
 
-**Power in R11:**
+Power in R11:
 P = 1² × 2.2 = 2.2W
 
-#### ✅ Total Power Dissipation:
+✅ Total Power Dissipation:
 
-P total = 1W + 2.2W = **3.2W**
-
+P total = 1W + 2.2W = 3.2W
+```
 
 #### 🛡️ Recommended Resistor Ratings:
 | Resistor | Actual Power | Recommended Rating |
