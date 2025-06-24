@@ -1,4 +1,4 @@
-a# Smart Emergency Light System
+# Smart Emergency Light System
 #### (with Battery Management, USB Output, and MCU Control)
 This is an advanced emergency lighting solution powered by a 10,000mAh 6V battery (2 × 6V 5Ah in parallel) and managed by a PIC12F675 microcontroller. 
 It integrates intelligent LED panel control, smart automatic charging, USB power output, status indication, manual override, and safety features like current limiting and relay-based automatic cutoff.
@@ -6,7 +6,7 @@ It integrates intelligent LED panel control, smart automatic charging, USB power
 Unlike basic emergency lights, this system operates as a smart power hub, designed for efficient battery usage, real-time 
 power status monitoring, and enhanced user interaction. It is optimized to extend battery life and deliver reliable backup power intelligently.
 
-## 💡 Features
+# 💡 Features
 
 - 🔋 **10,000mAh 6V rechargeable battery**  
   (2 × 6V 5Ah batteries connected in parallel)
@@ -45,7 +45,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 
 ---
 
-## 💻⚙️ Key Hardware Components and Their Functions
+# 💻⚙️ Key Hardware Components and Their Functions
 | Component                             | Description |
 | ------------------------------------- | --------------------------------------------------------------------------------------------|
 | **MCU**                               | PIC12F675 – Handles control logic, monitoring, and switching.|
@@ -70,6 +70,90 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 | **LED Current Limit Resistors**       | 1kΩ resistors used for current limiting: R13, R14, R15, R16 for power supply indicator LEDs. R3, R4 270Ω used for charging and battery-low indicators. Also protect MCU GPIO pins.|
 <br>
 <br>
+<br>
+
+# ⚙️🔋 Functional Overview
+### 🔌 Main Power supply
+A 9V-0-9V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable 12V DC supply for relays and the MCU voltage regulator.<br>
+**Rectified Voltage Calculation:**
+```
+VDC = VAC × √2 − diode drop
+    = 9 × 1.414 − 0.7
+    = 12.02V DC (approx)
+```
+<br>
+
+### 🔌  Charging Power supply 
+A 7.5V-0-7.5V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable DC voltage for battery charging.<br>
+**Rectified Voltage Calculation:**
+```
+VDC = VAC × √2 − diode drop
+    = 7.5 × 1.414 − 0.7
+    = 9.91V DC (approx)
+```
+<br>
+
+---
+
+<br>
+
+## 🔋🔌 Battery Charging Current Limit
+
+### 🔋 Battery Setup:
+- Two **6V 5Ah** batteries connected in **parallel**
+- **Total capacity:** 10Ah
+- **Recommended charge rate:**  
+  C/10 = 10000mAh / 10 = **1000mA = 1A**
+
+---
+
+### 🛠️ Charging Current Limiting Components:
+- **R10** and **R11**  
+- **D8** = Diode with **0.7V forward voltage drop**
+
+---
+
+### 🧮 Calculating Required Resistance for 1A Charging Current
+
+To find the required resistance to limit the **charging current to 1A**, we apply **Ohm’s Law**:
+
+**R = V / I**
+
+---
+
+### ✅ Given:
+
+- **Charging power supply voltage:** 9.91V  
+- **Battery voltage (discharged):** 6V  
+- **Diode D8 voltage drop:** 0.7V  
+- **Target charging current:** 1A
+
+---
+
+### ⚡ Voltage across the resistor(s):
+V_R = V_supply - V_battery - V_diode  
+V_R = 9.91V - 6V - 0.7V  
+V_R = 3.21V
+
+
+---
+
+### 🔧 Required resistance:
+R = V / I  
+R = 3.21V / 1A  
+R = 3.21Ω
+
+
+---
+
+✅ To limit charging current to **1A**, use a total resistance of **3.21Ω**  
+So We can use R10 = 1Ω and R11 = 2.2Ω → **Total = 3.2Ω**, which gives approx **1.003A**
+
+---
+
+
+
+
 
 
 
