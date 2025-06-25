@@ -191,7 +191,7 @@ Vout ≈ 4.76V to 5.70V
 - Adjust RP1 to precisely set output between **4.76V–5.70V**.
 - ⚠️ **Set to exactly 5.00V before connecting MCU.**
 - **C4, C5, C6, C7**: Filtering and decoupling capacitors, ensuring clean and stable voltage to sensitive components.
-- **D3 (1N4007)**: Prevents backward current flow, improving the stability of the MCU power stage.
+- **D3 (1N4007)**: Prevents backward current flow, improving the stability of the **MCU power stage**.
 
 ### 🔴 5V Power Indicator
 - **LED4** with R14 (1kΩ) turns ON when 5V output is present.
