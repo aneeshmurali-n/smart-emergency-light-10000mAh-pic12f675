@@ -424,7 +424,7 @@ This is the **battery charging controller** designed for **6V SLA (Sealed Lead A
 This circuit automatically connects the **USB power supply** and **two LED panels** to the **battery**, depending on power availability.  
 It uses **relay K2** to switch the output devices (LED panels, usb power supply) to the battery during a **power outage**, ensuring uninterrupted lighting.  
 
-## ⚙️ How It Works
+### 🔍 How It Works
 
 - The **Relay K2** is directly powered by a **+12V supply**.
 - When **+12V is present** (i.e., main power is available), the **K2 relay coil is energized**, and the relay switches to the **Normally Open (NO)** position, **disconnecting the battery** from the loads.  
