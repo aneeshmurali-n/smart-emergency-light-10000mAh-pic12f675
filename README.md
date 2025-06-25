@@ -471,17 +471,21 @@ It's designed to power **USB table lamps** or other light USB-powered devices du
 
 This project includes both hardware and software components, each licensed separately:
 
-### 🔧📦 Hardware License
+### 🛠️ Hardware License
 
 All hardware designs (schematics, PCB layouts, BOM, wiring diagrams, etc.) are licensed under the:
+
 **CERN Open Hardware License v2.0 - Strongly Reciprocal (CERN-OHL-S)**   
-See [`CERN-OHL-S v2 license`](./hardware/LICENSE) for full terms.
+
+See the [`CERN-OHL-S v2 license`](./hardware/LICENSE) file for full terms.
 
 ### 💻 Software License
 
 All firmware and code (e.g., microcontroller code, configuration scripts) are licensed under the:
+
 **MIT License**  
-See the [`LICENSE`](./firmware/LICENSE) file for full terms.
+
+See the [`MIT License`](./firmware/LICENSE) file for full terms.
 
 ---
 <br>
