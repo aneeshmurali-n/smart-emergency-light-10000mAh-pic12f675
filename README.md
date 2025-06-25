@@ -412,6 +412,16 @@ This is the **battery charging controller** designed for **6V SLA (Sealed Lead A
 
 ---
 
+<br>
+<br>
+<br>
+# 💡 Lamp Auto ON/OFF Control
+![image](https://github.com/user-attachments/assets/a3a8a4ce-05ee-4019-b27c-afe48f157ea5)
+
+## 🎯 Purpose
+This circuit automatically switches between **battery** and **USB power sources** to control **two LED panel lamps**, depending on power availability. It uses a relay for source selection and switch-based control for each lamp.
+
+
 © 2025 Aneesh Murali Nariyampully  
 
 
