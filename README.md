@@ -178,26 +178,29 @@ Vout ≈ 4.76V to 5.70V
 - **C8 (1000µF)**: Filters and smooths the DC voltage.
 
 ### 🔋 12V Power Supply
-- Directly taken from the smoothed DC output.
-- **LED3** with R13 (1kΩ) indicates **12V power** status.
+
+- Directly taken from the smoothed DC output that powers the **K1** and **K2** relays.
+- In a power failure situation, both relays lose power. If **K2** is directly connected to 12V, it stays active while power is present and turns off during an outage. When it turns off, it connects the output devices to the battery, so the lights turn on automatically.
+- To speed up the switching, a **bleeder resistor** (2.2kΩ 1W × 2 in parallel (R8, R9) = 1.1kΩ 2W) is placed across the main filter capacitor **C8**, allowing it to discharge faster. This ensures the lights turn on quickly during a blackout.
+- **LED3**, with **R13 (1kΩ)**, indicates the **12V power** status.
+
 
 ### 🔧 Adjustable 5V Supply via LM317
 - **U2 (LM317)**: Adjustable voltage regulator.
 - **R6, R7, and RP1 (potentiometer)**: Configure output voltage.
-  - Adjust RP1 to precisely set output between **4.76V–5.70V**.
-  - ⚠️ **Set to exactly 5.00V before connecting MCU.**
-- **C4, C5, C6, C7**: Filtering capacitors for stability.
-- **D3 (1N4007)**: Protects regulator from reverse voltage.
+- Adjust RP1 to precisely set output between **4.76V–5.70V**.
+- ⚠️ **Set to exactly 5.00V before connecting MCU.**
+- **C4, C5, C6, C7**: Filtering and decoupling capacitors, ensuring clean and stable voltage to sensitive components.
+- **D3 (1N4007)**: Prevents backward current flow, improving the stability of the MCU power stage.
 
 ### 🔦 5V Power Indicator
 - **LED4** with R14 (1kΩ) turns ON when 5V output is present.
 
 ---
 
-## 🛠️ Adjustable Output Notes
+## 🛠️📝 Adjustable Output Notes
 - **Use a multimeter** at the +5V rail.
 - Adjust RP1 to get **exactly 5.00V** before powering the MCU.
-- Output range: **4.76V to 5.70V**.
 
 
 ---
