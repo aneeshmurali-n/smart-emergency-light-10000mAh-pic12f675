@@ -359,18 +359,6 @@ This is the **battery charging controller** designed for **6V SLA (Sealed Lead A
 
 ---
 
-## 🛠 Configuration Bits
-
-```c
-#pragma config FOSC = INTRCIO   // Internal oscillator
-#pragma config WDTE = OFF       // Watchdog timer disabled
-#pragma config MCLRE = OFF      // GP3 as digital input
-#pragma config BOREN = ON       // Brown-out Reset enabled
-#pragma config CP = ON          // Code protection enabled
-```
-
----
-
 ## 💡 LED Indicators Summary
 
 | LED      | Condition                     | Behavior       |
