@@ -305,7 +305,7 @@ Using **5W-rated resistors** provides plenty of thermal margin, making the desig
 <br>
 <br>
 
-## 🧠🔋 PIC12F675 Battery Charge Controller
+# 🧠🔋 PIC12F675 Battery Charge Controller
 ![image](https://github.com/user-attachments/assets/8b148d1e-fa00-402b-98c1-1cbd95ea2cc7)
 
 ## 🎯 Purpose
