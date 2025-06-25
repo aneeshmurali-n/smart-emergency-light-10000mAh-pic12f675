@@ -435,6 +435,33 @@ It uses **relay K2** to switch the output devices (LED panels, usb power supply)
 - **Rocker switches** are placed between the relay’s output and each individual load.  
   This allows the user to **manually select** which devices should be powered during an outage, offering flexibility and control.
 
+  <br>
+  ---
+  <br>
+  <br>
+
+# USB Power Supply 🔌
+
+![image](https://github.com/user-attachments/assets/23afdbfe-7c31-4e96-8398-1f7297efc1a7)
+
+## 🎯 Purpose
+This circuit regulates the **battery voltage** or **LDO input** to a stable **5V USB output**, suitable for powering small USB devices (e.g., lights, fans, microcontrollers). It includes power indication via an LED.
+
+### 🔍 How It Works
+
+- **Input Voltage** is supplied to the `USB_LDO_Input` terminal, which typically comes from the **Lamp Auto ON/OFF Control** circuit.
+- **LED6** indicates the presence of input voltage.
+- **U3 (LD1117AG-ADJ-A)** is an adjustable Low Dropout Regulator (LDO) configured to output **5V** using appropriate resistor settings (not shown in schematic, likely pre-set internally or on another layer).
+- **Capacitors (C10–C14)**:
+  - Smooth and stabilize the input and output voltages
+  - Prevent ripple and noise in the USB output
+- The output is connected to a **USB type A connector (USB1)**:
+  - Provides **5V VCC**, **D+**, **D−**, and **GND**
+  - Shielding pins (SHLD) are grounded for EMI protection
+
+> ✅ This ensures USB devices connected to USB1 receive clean and regulated 5V power, even when sourced from a battery.
+
+  
 © 2025 Aneesh Murali Nariyampully  
 
 
