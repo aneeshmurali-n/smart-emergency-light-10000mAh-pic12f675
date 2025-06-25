@@ -82,7 +82,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 ![image](https://github.com/user-attachments/assets/960b5701-4a17-4e42-867d-4ba9e1641357)
 
 ## 🎯 Purpose
-This circuit provides a **regulated, accurate +5V** supply for the microcontroller (MCU) and an **unregulated +12V** for relays and other components. It also includes **adjustable voltage tuning** to enhance **ADC accuracy** in voltage measurements.
+This circuit provides a **regulated, accurate 5V** supply for the microcontroller (MCU) and an **unregulated 12V** for relays and other components. It also includes **adjustable voltage tuning** to enhance **ADC accuracy** in voltage measurements.
 
 ### Rectified Voltage Calculation:
 A 9V-0-9V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable 12V DC supply for relays and the MCU voltage regulator.
