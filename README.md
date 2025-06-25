@@ -413,8 +413,7 @@ This is the **battery charging controller** designed for **6V SLA (Sealed Lead A
 ---
 
 © 2025 Aneesh Murali Nariyampully  
-Compiler: **XC8 v2.50**  
-IDE: **MPLAB X IDE v6.20**
+
 
 
 
