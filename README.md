@@ -465,8 +465,15 @@ It's designed to power **USB table lamps** or other light USB-powered devices du
 ✅ This ensures USB devices receive clean, regulated 5V power — even when powered from a battery.  
 💡 Especially suitable for **USB table lamps** used during power outages.
 
+---
+<br>
+<br>
+## 🛠️ Designed By
 
-  
+**Aneesh Murali Nariyampully**  
+📍 India  
+⚙️ Embedded | 🧩 Electronics | 💻 Software | 📱 App Dev | 📊 Data & ML  
+
 © 2025 Aneesh Murali Nariyampully  
 
 
