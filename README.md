@@ -81,9 +81,12 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 # 🔌MCU & Relay Power Supply Calculation:
 ![image](https://github.com/user-attachments/assets/960b5701-4a17-4e42-867d-4ba9e1641357)
 
-A 9V-0-9V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable 12V DC supply for relays and the MCU voltage regulator.
+## 🎯 Purpose
+This circuit provides a **regulated, accurate +5V** supply for the microcontroller (MCU) and an **unregulated +12V** for relays and other components. It also includes **adjustable voltage tuning** to enhance **ADC accuracy** in voltage measurements.
 
 ### Rectified Voltage Calculation:
+A 9V-0-9V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable 12V DC supply for relays and the MCU voltage regulator.
+
 ```
 VDC = VAC × √2 − diode drop
     = 9 × 1.414 − 0.7
@@ -165,6 +168,37 @@ Vout ≈ 4.76V to 5.70V
 | **R6**    | 270 Ω (fixed)     |
 | **R7**    | 750 Ω (fixed)    |
 | **RP1**   | **51 Ω** (from 200 Ω range) |
+
+
+## 🔍How It Works
+
+### 🟦 AC to DC Conversion
+- **Input Terminals**: T3 & T4 receive 9V AC (T5 is GND).
+- **D1 & D2 (1N5408RLG)**: Rectify the AC input to produce unregulated DC (~12V).
+- **C8 (1000µF)**: Filters and smooths the DC voltage.
+
+### 🔋 12V Power Supply
+- Directly taken from the smoothed DC output.
+- **LED3** with R13 (1kΩ) indicates **12V power** status.
+
+### 🔧 Adjustable 5V Supply via LM317
+- **U2 (LM317)**: Adjustable voltage regulator.
+- **R6, R7, and RP1 (potentiometer)**: Configure output voltage.
+  - Adjust RP1 to precisely set output between **4.76V–5.70V**.
+  - ⚠️ **Set to exactly 5.00V before connecting MCU.**
+- **C4, C5, C6, C7**: Filtering capacitors for stability.
+- **D3 (1N4007)**: Protects regulator from reverse voltage.
+
+### 🔦 5V Power Indicator
+- **LED4** with R14 (1kΩ) turns ON when 5V output is present.
+
+---
+
+## 🛠️ Adjustable Output Notes
+- **Use a multimeter** at the +5V rail.
+- Adjust RP1 to get **exactly 5.00V** before powering the MCU.
+- Output range: **4.76V to 5.70V**.
+
 
 ---
 <br>
