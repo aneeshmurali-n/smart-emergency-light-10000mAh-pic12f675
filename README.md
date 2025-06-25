@@ -455,10 +455,12 @@ It's designed to power **USB table lamps** or other light USB-powered devices du
 - **U3 (LD1117-5.0 or fixed-output LD1117AG-ADJ-A)** is a Low Dropout (LDO) Regulator that outputs a **fixed 5V**.
 - **Capacitors (C10–C13)** are used to:
   - Smooth and stabilize input/output voltages
-  - Reduce ripple and filter noise for clean USB power
-- The regulated 5V output is fed to a **USB Type-A port (USB1)**, which provides:
-  - **VCC (5V)**, **D+**, **D−**, and **GND**
+  - Reduce ripple and filter noise for clean USB power 
+  - The regulated 5V output is fed to a **USB Type-A port (USB1)**, which provides:
+  - **5V VCC** and **GND** for power-only output
+  - **D+** and **D−** lines are unused, as the circuit is designed purely for light power delivery (e.g., USB lamps)
   - Grounded **SHLD** (shield) pins via **C13** for EMI protection
+
 
 ✅ This ensures USB devices receive clean, regulated 5V power — even when powered from a battery.  
 💡 Especially suitable for **USB table lamps** used during power outages.
