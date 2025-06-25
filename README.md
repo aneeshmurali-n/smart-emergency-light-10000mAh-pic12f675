@@ -466,6 +466,9 @@ It's designed to power **USB table lamps** or other light USB-powered devices du
 💡 Especially suitable for **USB table lamps** used during power outages.
 
 ---
+<br>
+<br>
+<br>
 
 ## 📝 License
 
