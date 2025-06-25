@@ -490,6 +490,7 @@ See the [`MIT License`](./firmware/LICENSE) file for full terms.
 ---
 <br>
 <br>
+
 ## 🛠️ Designed By
 
 **Aneesh Murali Nariyampully**  
