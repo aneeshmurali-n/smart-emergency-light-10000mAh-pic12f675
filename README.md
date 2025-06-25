@@ -440,26 +440,29 @@ It uses **relay K2** to switch the output devices (LED panels, usb power supply)
   <br>
   <br>
 
-# USB Power Supply 🔌
+# USB Power Supply 📲🔌
 
 ![image](https://github.com/user-attachments/assets/23afdbfe-7c31-4e96-8398-1f7297efc1a7)
 
-## 🎯 Purpose
-This circuit regulates the **battery voltage** or **LDO input** to a stable **5V USB output**, suitable for powering small USB devices (e.g., lights, fans, microcontrollers). It includes power indication via an LED.
+### 🎯 Purpose
+This circuit regulates power from a battery or backup source to deliver a **stable 5V USB output**.  
+It's designed to power **USB table lamps** or other light USB-powered devices during power outages.
 
 ### 🔍 How It Works
 
 - **Input Voltage** is supplied to the `USB_LDO_Input` terminal, which typically comes from the **Lamp Auto ON/OFF Control** circuit.
-- **LED6** indicates the presence of input voltage.
-- **U3 (LD1117AG-ADJ-A)** is an adjustable Low Dropout Regulator (LDO) configured to output **5V** using appropriate resistor settings (not shown in schematic, likely pre-set internally or on another layer).
-- **Capacitors (C10–C14)**:
-  - Smooth and stabilize the input and output voltages
-  - Prevent ripple and noise in the USB output
-- The output is connected to a **USB type A connector (USB1)**:
-  - Provides **5V VCC**, **D+**, **D−**, and **GND**
-  - Shielding pins (SHLD) are grounded for EMI protection
+- **LED6** lights up to indicate the presence of input voltage.
+- **U3 (LD1117-5.0 or fixed-output LD1117AG-ADJ-A)** is a Low Dropout (LDO) Regulator that outputs a **fixed 5V**.
+- **Capacitors (C10–C13)** are used to:
+  - Smooth and stabilize input/output voltages
+  - Reduce ripple and filter noise for clean USB power
+- The regulated 5V output is fed to a **USB Type-A port (USB1)**, which provides:
+  - **VCC (5V)**, **D+**, **D−**, and **GND**
+  - Grounded **SHLD** (shield) pins via **C13** for EMI protection
 
-> ✅ This ensures USB devices connected to USB1 receive clean and regulated 5V power, even when sourced from a battery.
+✅ This ensures USB devices receive clean, regulated 5V power — even when powered from a battery.  
+💡 Especially suitable for **USB table lamps** used during power outages.
+
 
   
 © 2025 Aneesh Murali Nariyampully  
