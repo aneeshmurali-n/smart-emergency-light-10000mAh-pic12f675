@@ -359,17 +359,17 @@ This is the **battery charging controller** designed for **6V SLA (Sealed Lead A
 - **+5V regulated input** powers the microcontroller and associated circuitry.
 
 ### Voltage Divider
-- **Resistors R1 and R2 (33k each, matched 1%)** scale the battery voltage for safe measurement by the PIC’s ADC (GP0/AN0).
-
+- **Resistors R1 and R2 (33kΩ each, matched 1%)** scale the battery voltage by half, allowing safe measurement by the PIC’s ADC input (**GP0/AN0**).
 ---
 
-## ⚙️ Key Functional Blocks
+### 🔍 How It Works
 
-### 🔍 Voltage Monitoring (ADC)
+### Voltage Monitoring (ADC)
 - Uses **AN0 (GP0)** to measure battery voltage.
-- Voltage is scaled via R1 and R2 and read using 10-bit ADC.
-- Voltage in millivolts is calculated as:  
-  ```c
+- Voltage is scaled down via R1 and R2 and read using 10-bit ADC.
+- Capacitor C3 (0.1µF) Placed across the ADC input to filter out high-frequency noise and stabilize the voltage reading for more accurate ADC conversion.
+- Voltage in millivolts is calculated as:
+  ```
   millivolts = (ADC * 5000 * 2) / 1023;
   ```
 
