@@ -469,7 +469,6 @@ It's designed to power **USB table lamps** or other light USB-powered devices du
 <br>
 
 ## 📝 License
-
 This project includes both hardware and software components, each licensed separately:
 
 ### 🛠️ Hardware License
