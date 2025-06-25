@@ -374,11 +374,11 @@ This is the **battery charging controller** designed for **6V SLA (Sealed Lead A
   ```
 
 ### 🔁 Charging Control
-- **RELAY control (GP1)** turns charging ON or OFF.
+- **RELAY K1** is controlled via **GP1** to turn charging **ON** or **OFF**.
 - Charging turns **ON**:
-  - Automatically when voltage ≤ **6.3V**
-  - Manually via **push button** (KEY1 → GP3)
-- Charging turns **OFF** when voltage ≥ **6.9V**
+  - Automatically when battery voltage ≤ **6.3V**
+  - Manually via **KEY1 push button** (connected to **GP3**)
+- Charging turns **OFF** when battery voltage ≥ **6.9V**
 
 ### 🔴 Low Battery Indication
 - **LOW_LED (GP4)** turns ON when voltage < **5.8V**
@@ -391,8 +391,8 @@ This is the **battery charging controller** designed for **6V SLA (Sealed Lead A
 ---
 
 ## 🔘 Manual Charging
-- **KEY1 button** connects to GP3 with pull-up resistor.
-- When pressed, it forces the controller to start charging regardless of battery voltage.
+ The **KEY1 button** is connected to **GP3** with a pull-up resistor, keeping the GP3 pin normally **HIGH**.
+- When pressed, it pulls **GP3** to **LOW**, forcing the controller to start charging regardless of the battery voltage.
 
 ---
 
@@ -400,15 +400,14 @@ This is the **battery charging controller** designed for **6V SLA (Sealed Lead A
 
 | LED      | Condition                     | Behavior       |
 |----------|-------------------------------|----------------|
-| LOW_LED  | Battery voltage < 5.8V        | ON             |
-| CHG_LED  | Charging in progress          | Blinking       |
-| CHG_LED  | Charging complete (≥ 6.9V)    | Solid ON       |
+| LOW_LED (LED2) | Battery voltage < 5.8V        | ON             |
+| CHG_LED (LED1) | Charging in progress          | Blinking       |
+| CHG_LED (LED2) | Charging complete (≥ 6.9V)    | Solid ON       |
 
 ---
 
 ## 📝 Notes
-- **Matched resistors (1%)** ensure accurate voltage measurement.
-- Designed with **noise filtering capacitors** (C1, C2, C3).
+- **Use 1% metal film resistors** for voltage dividers, and match their values using a multimeter to ensure accurate voltage measurement.
 - Easy to modify for different battery voltages by adjusting voltage thresholds.
 
 ---
