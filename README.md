@@ -185,7 +185,7 @@ Vout ≈ 4.76V to 5.70V
 - **LED3**, with **R13 (1kΩ)**, indicates the **12V power** status.
 
 
-### 🔧 Adjustable 5V Supply via LM317
+### 🔧⚡ Adjustable 5V Supply via LM317
 - **U2 (LM317)**: Adjustable voltage regulator.
 - **R6, R7, and RP1 (potentiometer)**: Configure output voltage.
 - Adjust RP1 to precisely set output between **4.76V–5.70V**.
@@ -193,7 +193,7 @@ Vout ≈ 4.76V to 5.70V
 - **C4, C5, C6, C7**: Filtering and decoupling capacitors, ensuring clean and stable voltage to sensitive components.
 - **D3 (1N4007)**: Prevents backward current flow, improving the stability of the MCU power stage.
 
-### 🔦 5V Power Indicator
+### 🔴 5V Power Indicator
 - **LED4** with R14 (1kΩ) turns ON when 5V output is present.
 
 ---
@@ -248,7 +248,7 @@ R = V / I
 ```
 
 
-### ✅ Given:
+### 📌 Given:
 
 - **Charging power supply voltage:** 9.91V  
 - **Battery voltage (discharged):** 6V  
@@ -287,7 +287,7 @@ To calculate power (wattage) dissipated in the current-limiting resistors, use:
 P = I² × R
 
 
-✅ Given:
+📌 Given:
 • Charging current I = 1A  
 • R10 = 1Ω  
 • R11 = 2.2Ω
