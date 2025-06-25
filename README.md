@@ -26,7 +26,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 - 💡 **Automatic LED panel control**  
   ON/OFF functionality using relays
 
-- 🧲 **Manual charge initiation**  
+- 🎚️**Manual charge initiation**  
   Triggered via a microswitch (KEY1 – force charge button)
 
 - 🔴 **LED Indicators:**
