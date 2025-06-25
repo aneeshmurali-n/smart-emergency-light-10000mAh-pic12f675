@@ -467,8 +467,6 @@ It's designed to power **USB table lamps** or other light USB-powered devices du
 
 ---
 <br>
-<br>
-<br>
 
 ## 📝 License
 
