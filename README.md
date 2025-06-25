@@ -421,8 +421,19 @@ This is the **battery charging controller** designed for **6V SLA (Sealed Lead A
 ![image](https://github.com/user-attachments/assets/a3a8a4ce-05ee-4019-b27c-afe48f157ea5)
 
 ## 🎯 Purpose
-This circuit automatically switches between **battery** and **USB power sources** to control **two LED panel lamps**, depending on power availability. It uses a relay for source selection and switch-based control for each lamp.
+This circuit automatically connects the **USB power supply** and **two LED panels** to the **battery**, depending on power availability.  
+It uses **relay K2** to switch the output devices (LED panels, usb power supply) to the battery during a **power outage**, ensuring uninterrupted lighting.  
 
+## ⚙️ How It Works
+
+- The **Relay K2** is directly powered by a **+12V supply**.
+- When **+12V is present** (i.e., main power is available), the **K2 relay coil is energized**, and the relay switches to the **Normally Open (NO)** position, **disconnecting the battery** from the loads.  
+  This is because the **load connections are made through the Normally Closed (NC) and Common (COM)** terminals.
+- When **+12V fails** (i.e., during a power outage), the relay de-energizes and **automatically switches to the battery** (**Battery_6V+_out**), providing backup power to:
+  - USB power outputs
+  - LED panels
+- **Rocker switches** are placed between the relay’s output and each individual load.  
+  This allows the user to **manually select** which devices should be powered during an outage, offering flexibility and control.
 
 © 2025 Aneesh Murali Nariyampully  
 
