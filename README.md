@@ -14,36 +14,33 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 - 🔋 **10,000mAh 6V rechargeable battery**  
   (2 × 6V 5Ah batteries connected in parallel)
 
-- 🧠 **Microcontroller-based control**  
-  Powered by the PIC12F675 MCU
-
-- ⚡ **Smart current-limited battery charging**  
-  Uses power resistors with MCU-based monitoring and automatic cutoff
-
+- 🧠⚡ **Smart Microcontroller based battery charging**  
+  MCU-based monitoring and automatic control ensure proper charging, preventing overcharging and helping to extend battery life.
+  
 - 🔌 **USB power output**  
-  5V regulated via LD1117 LDO
+  5V USB power output acts as a backup to power light devices like USB table lamps when mains power is unavailable.
 
 - 💡 **Automatic LED panel control**  
-  ON/OFF functionality using relays
+  The lights automatically turn on during power outages and turn off when power is restored.
 
-- 🎚️ **Manual charge initiation**  
-  Triggered via a microswitch (KEY1 – force charge button)
+- 🎚️ **Manual charge trigger button**  
+  A manual override that lets you force the system into charging mode whenever needed.
 
 - 🔴 **LED Indicators:**
   - Green LED blinks while charging, stays solid when fully charged
   - Red LED glows when battery is critically low (only when plugged in)
   - Separate indicators for 12V and 5V power presence
 
-- 🛡️ **Overcurrent protection**  
-  Implemented with high-wattage resistors and protective diodes
+- 🔌 **Individually Controlled Outputs**
+  Each output device—LED Panel 1, LED Panel 2, and USB Power Out—has its own on/off switch. This allows users to manually choose which devices to power during an outage, providing flexibility and   control.
 
-- 🔌 **Switchable outputs**  
-  Independent switching for USB and dual LED panels
-
-- 🔧 **Adjustable MCU supply voltage (4.76V – 5.70V)**  
-  To set and maintain the ADC reference voltage precisely at **5.00V** for improved measurement accuracy
+- 🔧 **Adjustable MCU Supply Voltage (4.76V – 5.70V)**
+  Allows fine-tuning of the supply to precisely set the ADC reference at 5.00V, enhancing measurement accuracy. This enables the system to accurately detect battery voltage and state of charge,     improving charging precision and overall performance.
+  
   <br>
+  
 ---
+
 <br>
 
 # 💻⚙️ Key Hardware Components and Their Functions
