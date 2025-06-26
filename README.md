@@ -65,7 +65,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 | **LM317 Output Voltage Set Resistor** | Fixed: R6 (270 Ω), R7 (750 Ω), Adjustable: RP1 (0–200 Ω). These resistors set the LM317 output voltage (~4.73 V to 5.65 V). Set RP1 to approximately 51 Ω for a 5.00 V output (used for MCU power and ADC reference). For best results, fine-tune using a multimeter. |
 | **Voltage Sensor**                    | 33kΩ (R1, R2) – Forms a voltage divider to scale down input voltage by half, enabling safe battery voltage measurement and protecting the MCU GPIO. Match resistor values using a multimeter for better accuracy. |
 | **Base Current Limit Resistor**       | 1kΩ (R12) – Sets the base current for the relay driver transistor and protects the MCU GPIO pin. |
-| **Relay Driver**                      | 2N5551 (Q1) – NPN transistor used to drive the relay using the microcontroller’s output signal. |
+| **Relay Driver**                      | 2N5551 (Q1) – NPN transistor used as a relay driver, controlled by the microcontroller’s output signal.|
 | **Input Isolation Diode**             | M7 or 1N4007 (D3) – Isolates the LM317’s input capacitor (100µF, C6) from the main bulk capacitor (1000µF, C8), and prevents reverse current flow. |
 | **LED Current Limit Resistors**       | 1kΩ resistors used for current limiting: R13, R14, R15, R16 for power supply indicator LEDs. R3, R4 270Ω used for charging and battery-low indicators. Also protect MCU GPIO pins.|
 <br>
