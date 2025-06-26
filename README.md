@@ -358,8 +358,85 @@ This is the **battery charging controller** designed for **6V SLA (Sealed Lead A
 ### Power Supply
 - **+5V regulated input** powers the microcontroller and associated circuitry.
 
-### Voltage Divider
+### 🔋 Voltage Divider-Based Battery Voltage Sensor
+![image](https://github.com/user-attachments/assets/ee1c1193-b51e-428c-9611-b609287b3532)
+
+## 🎯 Purpose
+The voltage divider circuit is used to safely monitor the voltage of a **6V sealed lead-acid (SLA) battery** with a **PIC12F675** microcontroller. The voltage is scaled to fit within the 0–5 V range acceptable to the built-in 10-bit ADC.
 - **Resistors R1 and R2 (33kΩ each, matched 1%)** scale the battery voltage by half, allowing safe measurement by the PIC’s ADC input (**GP0/AN0**).
+
+
+
+
+### 📐 Voltage Divider Calculations:
+
+To sense voltage (up to 10 V max), a 2:1 resistive divider is used:
+
+- **Divider Ratio**: Vout = Vin × (R2 / (R1 + R2)) = Vin × 0.5
+- This ensures up to **10 V** at Vin will result in **5 V** at the ADC input — safe for the MCU.
+- With a 10-bit ADC (0–1023) and 5 V reference:
+  ```
+  ADC = (Vin × 0.5 / 5.0) × 1023 = Vin × 102.3
+  ```
+
+---
+
+### 📈 Battery Voltage vs ADC Output
+
+| Battery Voltage (Vin) | Vout (To ADC) | ADC Reading (approx.) | Description                  |
+|------------------------|---------------|------------------------|------------------------------|
+| 5.8 V                 | 2.90 V        | 593                    | Low battery warning          |
+| 6.0 V                 | 3.00 V        | 614                    | Idle / normal operating zone |
+| 6.3 V                 | 3.15 V        | 644                    | Restart charging             |
+| 6.9 V                 | 3.45 V        | 707                    | Stop charging (cutoff)       |
+| 10.0 V                | 5.00 V        | 1023                   | Max safe input to divider    |
+
+---
+
+### ⚡ Voltage Divider Self-Discharge Analysis
+
+The voltage sensing divider (33 kΩ + 33 kΩ = 66 kΩ total) is always connected to the battery. This creates a small continuous current drain — essentially a slow self-discharge through the resistors.
+
+#### 🔍 Current Through Divider
+
+**Battery voltage**: 6.3 V  
+**Divider resistance**: 66,000 Ω
+
+```text
+I = V / R = 6.3 V / 66,000 Ω ≈ 95.5 µA
+```
+
+The divider draws approximately **95 µA** continuously.
+
+#### 🔋 Impact on a 6V 10Ah SLA Battery
+
+**Battery capacity**: 10,000 mAh  
+**Divider current**: 0.0955 mA
+
+```text
+Runtime = 10,000 mAh / 0.0955 mA ≈ 104,712 hours ≈ ~12 years
+```
+
+#### ✅ Conclusion
+
+- The voltage divider causes a **very small drain (~95 µA)**.
+- This is **negligible** compared to the battery's natural self-discharge (~3–5% per month).
+- No significant impact on battery life during normal operation.
+
+---
+
+### 🧠 Why 10V Max Input?
+
+When the battery is disconnected but the charger is still active, there's no load to limit voltage, and the charger may output higher voltages. The divider safely brings even a **10 V overshoot** within the **5 V safe range** for the ADC. It does **not clamp**, but protects the MCU input from overvoltage under normal failure conditions.
+
+---
+
+### 📌 Summary
+
+- Voltage divider scales 6–10 V range to safe ADC levels
+- Used to precisely monitor charge state
+- Designed for 6 V SLA battery with self-discharge behavior in mind
+- Ensures safe, automatic cutoff and low-voltage protection
 ---
 
 ### 🔍 How It Works
