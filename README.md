@@ -1,6 +1,6 @@
-# 💡Smart Emergency Light System 
+# 💡Smart Emergency Light System
 > 🚧 This repository is under active development.
-#### (with Battery Management, USB Output, and MCU Control)
+#### (with Battery Management, USB Output, and MCU Control) 
 This is an advanced emergency lighting solution powered by a 10,000mAh 6V battery (2 × 6V 5Ah in parallel) and managed by a PIC12F675 microcontroller. 
 It integrates intelligent LED panel control, smart automatic charging, USB power output, status indication, manual override, and safety features like current limiting and relay-based automatic cutoff.
 
@@ -11,22 +11,22 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 <br>
 # ✨Features
 
-- 🔋 **10,000mAh 6V rechargeable battery**  
+- 🔋 **10,000mAh 6V rechargeable battery** <br> 
   (2 × 6V 5Ah batteries connected in parallel)
 
-- 🧠⚡ **Smart Microcontroller based battery charging**  
+- 🧠⚡ **Smart Microcontroller based battery charging**  <br>
   MCU-based monitoring and automatic control ensure proper charging, preventing overcharging and helping to extend battery life.
   
-- 🔌 **USB power output**  
+- 🔌 **USB power output**  <br>
   5V USB power output acts as a backup to power light devices like USB table lamps when mains power is unavailable.
 
-- 💡 **Automatic LED panel control**  
+- 💡 **Automatic LED panel control**  <br>
   The lights automatically turn on during power outages and turn off when power is restored.
 
-- 🎚️ **Manual charge trigger button**  
+- 🎚️ **Manual charge trigger button**  <br>
   A manual override that lets you force the system into charging mode whenever needed.
 
-- 🔴 **LED Indicators:**
+- 🔴 **LED Indicators:** <br>
   - Green LED blinks while charging, stays solid when fully charged
   - Red LED glows when battery is critically low (only when plugged in)
   - Separate indicators for 12V and 5V power presence
