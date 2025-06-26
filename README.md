@@ -358,7 +358,7 @@ This is the **battery charging controller** designed for **6V SLA (Sealed Lead A
 ### Power Supply
 - **+5V regulated input** powers the microcontroller and associated circuitry.
 
-### 🔋 Voltage Divider-Based Battery Voltage Sensor
+### Voltage Divider-Based Battery Voltage Sensor
 ![image](https://github.com/user-attachments/assets/ee1c1193-b51e-428c-9611-b609287b3532)
 
 ## 🎯 Purpose
