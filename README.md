@@ -427,19 +427,19 @@ Runtime = 10,000 mAh / 0.0955 mA ≈ 104,712 hours ≈ ~12 years
 
 ### 🧠 Why 10V Max Input?
 
-When the battery is disconnected but the charger is still active, there's no load to limit voltage, and the charger may output higher voltages. The divider safely brings even a **10 V overshoot** within the **5 V safe range** for the ADC. It does **not clamp**, but protects the MCU input from overvoltage under normal failure conditions.
+When the battery is disconnected but the charger remains active, there is no load to limit the voltage. As a result, the charger may produce higher voltages. The voltage divider safely scales even a 10 V overshoot down to within the 5 V safe range for the ADC. While it does not clamp the voltage, it helps protect the MCU input from overvoltage when the battery is disconnected.
 
 ---
 
 ### 📌 Summary
 
-- Voltage divider scales 6–10 V range to safe ADC levels
+- Voltage divider scales 0–10 V range to safe ADC levels
 - Used to precisely monitor charge state
 - Designed for 6 V SLA battery with self-discharge behavior in mind
-- Ensures safe, automatic cutoff and low-voltage protection
+- Ensures safe, automatic cutoff and voltage overshoot protection
 ---
 
-### 🔍 How It Works
+### 🔍 How PIC12F675 Battery Charge Controller Works
 
 ### Voltage Monitoring (ADC)
 - Uses **AN0 (GP0)** to measure battery voltage.
@@ -467,13 +467,13 @@ When the battery is disconnected but the charger is still active, there's no loa
 
 ---
 
-## 🔘 Manual Charging
+### 🔘 Manual Charging
  The **KEY1 button** is connected to **GP3** with a pull-up resistor, keeping the GP3 pin normally **HIGH**.
 - When pressed, it pulls **GP3** to **LOW**, forcing the controller to start charging regardless of the battery voltage.
 
 ---
 
-## 💡 LED Indicators Summary
+### 💡 LED Indicators Summary
 
 | LED      | Condition                     | Behavior       |
 |----------|-------------------------------|----------------|
