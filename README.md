@@ -346,7 +346,7 @@ Using **5W-rated resistors** provides plenty of thermal margin, making the desig
 ![image](https://github.com/user-attachments/assets/8b148d1e-fa00-402b-98c1-1cbd95ea2cc7)
 
 ## 🎯 Purpose
-This is the **battery charging controller** designed for **6V SLA (Sealed Lead Acid) batteries**. It automatically manages the charging process using voltage sensing and provides visual indicators for charging status and low battery conditions. Manual charging override is also supported via a push button.
+This is a battery charging controller designed for 6V SLA (Sealed Lead Acid) batteries. It automatically manages the charging process using voltage sensing and provides visual indicators for charging status and low battery conditions. The controller ensures intelligent and accurate charging, helping to prevent overcharging, extend battery life, and enhance long-term reliability. A manual charging override is also supported via a push button, allowing the system to be forced into charging mode when needed.
 
 ---
 
