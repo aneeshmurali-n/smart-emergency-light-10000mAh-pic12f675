@@ -35,6 +35,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
   Each output device—LED Panel 1, LED Panel 2, and USB Power Out—has its own on/off switch. This allows users to manually choose which devices to power during an outage, providing flexibility and   control.
 
 - 🔧 **Adjustable MCU Supply Voltage (4.76V – 5.70V)**
+  
   Allows fine-tuning of the supply to precisely set the ADC reference at 5.00V, enhancing measurement accuracy. This enables the system to accurately detect battery voltage and state of charge,     improving charging precision and overall performance.
   
   <br>
