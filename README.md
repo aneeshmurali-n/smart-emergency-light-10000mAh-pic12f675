@@ -62,7 +62,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 | **Start Charging Button**             | KEY1 – SPST momentary panel push button (e.g., 6×6×8mm tactile type) used to manually initiate charging by pulling the MCU GPIO pin low. |
 | **Charging Button Pull-up Resistor**  | 4.7kΩ (R5) – Keeps the GPIO pin high by default. When the button is pressed, it pulls the pin low to trigger charging. Also limits current into the GPIO.|
 | **Potentiometer**                     | RP1 (200Ω multi-turn) – Used to fine-tune the MCU supply and ADC reference voltage. Adjust to precisely 5.00V before inserting the MCU for accurate operation.|
-| **LM317 Output Voltage Set Resistor** | Fixed: R6 (270Ω), R7 (750Ω); Adjustable: RP1 (0–200Ω) – Used to set LM317 output voltage (\~4.73V–5.65V). Adjust RP1 to \~60Ω for 5.00V (MCU + ADC reference).|
+| **LM317 Output Voltage Set Resistor** | Fixed: R6 (270 Ω), R7 (750 Ω), Adjustable: RP1 (0–200 Ω). These resistors set the LM317 output voltage (~4.73 V to 5.65 V). Set RP1 to approximately 51 Ω for a 5.00 V output (used for MCU power and ADC reference). For best results, fine-tune using a multimeter. |
 | **Voltage Sensor**                    | 33kΩ (R1, R2) – Forms a voltage divider to scale down input voltage by half, enabling safe battery voltage measurement and protecting the MCU GPIO. Match resistor values using a multimeter for better accuracy. |
 | **Base Current Limit Resistor**       | 1kΩ (R12) – Sets the base current for the relay driver transistor and protects the MCU GPIO pin. |
 | **Relay Driver**                      | 2N5551 (Q1) – NPN transistor used to drive the relay using the microcontroller’s output signal. |
