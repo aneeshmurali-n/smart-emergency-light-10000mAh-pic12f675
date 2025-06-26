@@ -72,7 +72,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 <br>
 <br>
 
-# ⚙️🔋 Functional Overview
+# 🛠️📊 Functional Overview and System Design Calculations
 <br>
 
 # 🔌MCU & Relay Power Supply Calculation:
