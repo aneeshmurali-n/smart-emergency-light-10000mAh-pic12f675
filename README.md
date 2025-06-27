@@ -207,7 +207,7 @@ Vout ≈ 4.76V to 5.70V
 ![image](https://github.com/user-attachments/assets/23fa0a38-a06d-4c4c-9a1b-1a395165e2b6)
 
 ## 🎯 Purpose
-This circuit provides a **charging supply** to a **6V battery**, with current limiting (~1A), relay-based control, and a visual indicator for power supply activity. It receives **control signals** from a microcontroller (e.g., from the Battery Charge Controller system down below).
+This circuit provides current-limited charging power to the battery (approximately 1A) and uses a relay-based control system to switch the battery between the charger and the output. The switching is governed by control signals from a microcontroller, based on programmed logic. It also features an LED that indicates the power supply status.
 
 ### Rectified Voltage Calculation:
 A 7.5V-0-7.5V center-tapped AC input is rectified using high-current diodes (1N5408) and filtered by large electrolytic capacitors to produce a stable DC voltage for battery charging.<br>
