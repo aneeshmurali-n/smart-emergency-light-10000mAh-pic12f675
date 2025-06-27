@@ -518,8 +518,7 @@ This circuit automatically powers the USB supply and two LED panels from the bat
 ![image](https://github.com/user-attachments/assets/23afdbfe-7c31-4e96-8398-1f7297efc1a7)
 
 ### 🎯 Purpose
-This circuit regulates power from a battery or backup source to deliver a **stable 5V USB output**.  
-It's designed to power **USB table lamps** or other light USB-powered devices during power outages.
+This circuit regulates the battery voltage to provide a stable 5V output, which can be used to power light USB devices such as USB lamps or to charge basic devices as a backup during power loss.
 
 ### 🔍 How It Works
 
