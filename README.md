@@ -48,7 +48,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 
 | Component                             | Description |
 | ------------------------------------- | --------------------------------------------------------------------------------------------|
-| **MCU**                               | PIC12F675 – Handles control logic, monitoring, and switching.|
+| **MCU (Microcontroller)**                               | PIC12F675 – Handles control logic, monitoring and automatic battery charging.|
 | **MCU Regulator**                     | LM317 adjustable regulator for MCU supply and ADC reference (4.76V–5.70V).|
 | **USB Regulator**                     | LD1117AG (5V LDO) – Provides regulated 5V output for light USB loads (e.g., USB lamps).|
 | **Relays**                            | JSM1-12V-5 (×2) – For automatic LED panel switching, charging control, and cutoff.|
