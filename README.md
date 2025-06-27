@@ -495,8 +495,7 @@ When the battery is disconnected but the charger remains active, there is no loa
 ![image](https://github.com/user-attachments/assets/a3a8a4ce-05ee-4019-b27c-afe48f157ea5)
 
 ## 🎯 Purpose
-This circuit automatically connects the **USB power supply** and **two LED panels** to the **battery**, depending on power availability.  
-It uses **relay K2** to switch the output devices (LED panels, usb power supply) to the battery during a **power outage**, ensuring uninterrupted lighting.  
+This circuit automatically powers the USB supply and two LED panels from the battery during a power outage. When mains power is lost, relay K2 de-energizes, switching the load to the battery backup and ensuring the lights turn on automatically.
 
 ### 🔍 How It Works
 
