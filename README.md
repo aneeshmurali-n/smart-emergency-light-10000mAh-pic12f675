@@ -509,7 +509,6 @@ This circuit automatically powers the USB supply and two LED panels from the bat
   This allows the user to **manually select** which devices should be powered during an outage, offering flexibility and control.
 
   <br>
-  ---
   <br>
   <br>
 
