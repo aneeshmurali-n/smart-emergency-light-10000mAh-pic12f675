@@ -14,6 +14,7 @@ power status monitoring, and enhanced user interaction. It is optimized to exten
 <br>
 <br>
 # ✨Features
+![opened view](https://github.com/user-attachments/assets/9eaab8d4-1ee8-4872-a3b7-0441e3b475ca)
 
 - 🔋 **10,000mAh 6V rechargeable battery** <br> 
   (2 × 6V 5Ah batteries connected in parallel)
