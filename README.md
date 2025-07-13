@@ -535,6 +535,11 @@ This circuit regulates the battery voltage to provide a stable 5V output, which 
 💡 Especially suitable for **USB table lamps** used during power outages.
 
 ---
+
+[![Watch the video](https://github.com/user-attachments/assets/d3e3f474-426f-4bbf-8a36-708944b4ef16)](https://youtu.be/LJ8bhbpD56M?si=86h5FF02fp5p0lCe)
+
+
+---
 <br>
 
 ## 📝 License
