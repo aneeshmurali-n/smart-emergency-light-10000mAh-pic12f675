@@ -1,7 +1,5 @@
 # 💡Smart Emergency Light System
 
-![Smart Light System](https://github.com/user-attachments/assets/bf236060-d7f6-4abf-b56f-aff0eca27dfc)
-
 **Meet the Smart Emergency Light System! This advanced power hub uses a 10,000mAh battery and PIC12F675 MCU for smart charging, USB output, and auto LED control. It extends battery life and ensures reliable power during any outage. Far smarter than basic emergency lights!**
 
 [![Watch the video](https://github.com/user-attachments/assets/b0a5ec5b-f94a-46a2-b130-dbd6bbab9df0)](https://youtu.be/LJ8bhbpD56M?si=86h5FF02fp5p0lCe)
