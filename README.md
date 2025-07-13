@@ -524,7 +524,7 @@ This circuit regulates the battery voltage to provide a stable 5V output, which 
 
 - **Input Voltage** is supplied to the `USB_LDO_Input` terminal, which comes directly from the **Lamp Auto ON/OFF Control** circuit.
 - **LED6** indicates input voltage presence, effectively showing the USB output status (ON/OFF).
-- **U3 (LD1117-5.0 or fixed-output LD1117AG-ADJ-A)** is a Low Dropout (LDO) Regulator that outputs a **fixed 5V**.
+- **U3 (LD1117-5.0 (fixed-output) or LD1117AG-ADJ-A)** is a Low Dropout (LDO) Regulator that outputs a **fixed 5V**.
 - **Capacitors (C10–C13)** are used to:
   - Smooth and stabilize input/output voltages
   - Reduce ripple and filter noise for clean USB power 
